@@ -7,6 +7,7 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Ocelot.DependencyInjection;
 
 namespace Valuer.ApiGateways.Base
 {
@@ -19,8 +20,15 @@ namespace Valuer.ApiGateways.Base
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-            .ConfigureAppConfiguration(
-                ic => ic.AddJsonFile(Path.Combine("configuration.json")))
+            .ConfigureAppConfiguration((hostingContext, config) =>
+            {
+                config
+                    .SetBasePath(hostingContext.HostingEnvironment.ContentRootPath)
+                    .AddJsonFile("appsettings.json", true, true)
+                    .AddJsonFile($"appsettings.{hostingContext.HostingEnvironment.EnvironmentName}.json", true, true)
+                    .AddOcelot(hostingContext.HostingEnvironment)
+                    .AddEnvironmentVariables();
+            })
                 .UseStartup<Startup>();
     }
 }

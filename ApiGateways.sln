@@ -12,11 +12,8 @@ EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{69170A75-0476-4A5C-B1B7-A1A6CD9389EA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web.Gateway", "Web.Gateway", "{7D9E4568-B738-4178-824D-97A204BDC39B}"
-	ProjectSection(SolutionItems) = preProject
-		src\Web.Gateway\configuration.json = src\Web.Gateway\configuration.json
-	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.Api.HttpAggregator", "src\Web.Gateway\Web.Api.HttpAggregator\Web.Api.HttpAggregator.csproj", "{BB78D6B6-4274-41B7-A8ED-F068152533A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web.Api.HttpAggregator", "src\Web.Gateway\Web.Api.HttpAggregator\Web.Api.HttpAggregator.csproj", "{BB78D6B6-4274-41B7-A8ED-F068152533A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
