@@ -9,6 +9,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Web.Api.HttpAggregator.Interfaces;
+using Web.Api.HttpAggregator.Services;
 
 namespace Web.Api.HttpAggregator
 {
@@ -25,6 +27,7 @@ namespace Web.Api.HttpAggregator
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddTransient<IValuationService, ValuationService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

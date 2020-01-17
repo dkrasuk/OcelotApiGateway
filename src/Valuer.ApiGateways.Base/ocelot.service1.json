@@ -2,7 +2,7 @@
   "ReRoutes": [
 
     {
-      "DownstreamPathTemplate": "/api/values",
+      "DownstreamPathTemplate": "/api/valuation",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -10,7 +10,7 @@
           "Port": 80
         }
       ],
-      "UpstreamPathTemplate": "/api/ocelot/values",
+      "UpstreamPathTemplate": "/api/ocelot/valuation",
       "UpstreamHttpMethod": [ "POST", "PUT", "GET" ]
     }
 
