@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  valuer.apigateways.base:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "5201:80"
+    volumes:
+      - ./src/Web.Gateway:/app/configuration
+
+  valuer.web.gateway:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "5203:80"
+    volumes:
+      - ./src/Web.Gateway:/app/configuration

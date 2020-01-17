@@ -1,0 +1,23 @@
+﻿{
+  "ReRoutes": [
+
+    {
+      "DownstreamPathTemplate": "/api/values",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "valuer.web.gateway",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/ocelot/values",
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET" ]
+    }
+
+  ],
+
+
+
+
+  "GlobalConfiguration": {}
+}

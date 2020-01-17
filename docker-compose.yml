@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  valuer.apigateways.base:
+    image: ${DOCKER_REGISTRY-}valuerapigatewaysbase
+    build:
+      context: .
+      dockerfile: src/Valuer.ApiGateways.Base/Dockerfile
+
+
+  valuer.web.gateway:
+    image: ${DOCKER_REGISTRY-}webapigateway
+    build:
+      context: .
+      dockerfile: src/Web.Gateway/Web.Api.HttpAggregator/Dockerfile  
